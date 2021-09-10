@@ -1,0 +1,430 @@
+/* 
+    Style Summary
+        General Styling
+        Modal Styling
+        Header Section
+        Info Section
+        Buy Section
+        Footer Section
+        Media Queries
+*/
+
+// GENERAL STYLING
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p{
+    margin: 0px;
+}
+
+h1{
+    font-size: 33px;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+p{
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border: none;
+    padding: 0px;
+}
+
+.btn{
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 40px;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.btn-primary{
+    background-color: rgb(40, 41, 43);
+    border: 1px solid rgb(40, 41, 43);
+
+    &:hover{
+        background-color: rgb(55, 56, 59);
+        border: 1px solid rgb(55, 56, 59);
+    }
+}
+
+.btn-secondary{
+    border: 1px solid white;
+
+    &:hover{
+        box-shadow: 0px 0px 10px white;
+    }
+}
+
+// Modal Styling
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 0vh;
+	background-color: transparent;
+	overflow: hidden;
+	transition: background-color 0.25s;
+	z-index: 9999;
+	
+	&.open {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0,0,0,0.5);
+		transition: background-color 0.25s;
+		
+		> .content-wrapper {
+			transform: scale(1.0);
+		}
+	}
+	
+	.content-wrapper {
+		position: relative;
+		padding: 30px;
+        margin: 10px;
+		background-color: white;
+		border-radius: 0.3125rem;
+		box-shadow: 0 0 2.5rem rgba(0,0,0,0.5);
+		transform: scale(0.0);
+		transition: transform 0.25s;
+		transition-delay: 0.15s;
+
+        h3{
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+		
+		.close {
+			width: 13px;
+            height: 13px;
+            position: absolute;	
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+		}
+	}
+
+    .modal-form{
+
+        input{
+            width: 100%;
+            border: none;
+            padding: 10px;
+            box-shadow: 0px 0px 5px rgb(221, 221, 221);
+            border-radius: 4px;
+
+            &:focus{
+                outline: none;
+            }
+        }
+
+        .form-item{
+            display: block;
+            margin: 15px auto 0px auto;
+        }
+    }
+}
+
+// APPLICATION STYLING
+.container{
+    
+    &-pad{
+        padding: 80px;
+    }
+
+    &-max{
+        max-width: 1000px;
+        margin: 0px auto;
+    }
+
+    // HEADER SECTION
+    .header{
+        background-image: linear-gradient(to right, #2B4896, #2083C6);
+
+        .logo{
+            display: block;
+            width: 150px;
+            margin-bottom: 35px;
+        }
+
+        &-flex{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            align-items: center;
+        }
+
+        &-flex-variation{
+            flex-wrap: wrap;
+        }
+
+        &-left{
+            color: white;
+            flex-grow: 1;
+            flex-basis: 400px;
+
+            .header-text{
+                margin-bottom: 40px;
+
+                h1{
+                    line-height: 1.1;
+                }
+
+                h3{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .header-buttons{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                button{
+                    flex-basis: 204px;
+                }
+
+                .btn-secondary{
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        &-right{
+            flex-grow: 1;
+            flex-basis: 400px;
+
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
+    // INFO SECTION
+    .info{
+
+        &-header{
+            max-width: 500px;
+            margin: 0px auto 50px auto;
+            text-align: center;
+            
+            h1{
+                margin-bottom: 25px;
+            }
+        }
+
+        &-cards{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            .card-item{
+                margin: 25px;
+                flex-basis: 280px;
+                display: flex;
+                border-radius: 10px;
+                padding: 15px;
+                box-shadow: 0px 0px 5px rgb(207, 207, 207);
+
+                span{
+                    font-size: 25px;
+                    font-weight: 700;
+                    margin-right: 15px;
+                    position: relative;
+                    bottom: 9px;
+                }
+
+                &-text{
+
+                    h3{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    // BUY SECTION
+    .buy-section{
+        background-image: linear-gradient(to right, #2B4896, #2083C6);
+        text-align: center;
+        color: white;
+
+        h1{
+            margin-bottom: 30px;
+        }
+    }
+
+    // FOOTER SECTION
+    .footer{
+        border-top: 1px solid #2685c5;
+        background-image: linear-gradient(to right, #2B4896, #2083C6);
+        padding: 30px 0px;
+        color: white;
+        text-align: center;
+
+        .social-media{
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+
+            svg{
+                margin: 0px 5px;
+                width: 25px;
+                height: 25px;
+                fill: rgb(245, 245, 245)
+            }
+        }
+    }
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 959px){
+
+    .container{
+
+        &-pad{
+            padding: 50px;
+        }
+
+        .info{
+
+            &-cards{
+
+                .card-item{
+                    margin: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px){
+
+    .container{
+
+        .header{
+
+            &-left{
+                max-width: 600px;
+                text-align: center;
+                margin: 0px auto;
+
+                .header-buttons{
+                    justify-content: center;
+                }
+            }
+
+            &-right{
+                max-width: 600px;
+                margin: 0px auto 40px auto;
+            }
+        }
+
+        .info{
+
+            &-header{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 719px){
+    .container{
+
+        .info{
+
+            &-cards{
+                display: block;
+
+                .card-item{
+                    width: 320px;
+                    height: 200px;
+                    margin: 10px;
+                    box-shadow: none;
+                    background-color: rgb(245, 245, 245);
+                }
+
+                &::after{
+                    content: "flickity";
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 665px){
+
+    .container{
+
+        &-pad{
+            padding: 30px 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 415px){
+
+    h1{
+        font-size: 28px;
+    }
+
+    .btn{
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 200px;
+    }
+
+    .container{
+
+        .header{
+
+            .logo{
+                width: 130px;
+            }
+            
+            &-left{
+
+                .header-buttons{
+                    
+                    .btn-secondary{
+                        margin-left: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
